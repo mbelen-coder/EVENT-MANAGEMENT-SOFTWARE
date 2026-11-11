@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#073b66">
+<title>ACTS Colleges | Electronic Registration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/acts-logo.jpg" alt="ACTS Colleges official logo">
+    <div><strong>ACTS COLLEGES</strong><span>ASSESSMENT CENTER</span></div>
+  </div>
+  <div class="top-label">EVENT MANAGEMENT SERVICES NC III</div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <div class="eyebrow">EVENT MANAGEMENT SOFTWARE</div>
+    <h1>Electronic Registration</h1>
+    <p>Applicant registration for <strong>Event Management Services NC III</strong></p>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Registration sections">
+    <button class="tab active" data-tab="register" type="button">Applicant Registration</button>
+    <button class="tab" data-tab="records" type="button">Registration Records</button>
+  </div>
+
+  <section id="register" class="view active">
+    <form id="registration-form" class="card">
+      <div class="card-title">
+        <div><span class="step">01</span><h2>Applicant Information</h2></div>
+        <p>Fields marked with * are required.</p>
+      </div>
+      <div class="form-grid">
+        <label class="wide">Full Name *<input name="fullName" autocomplete="name" required placeholder="Last Name, First Name, Middle Name"></label>
+        <label>Date of Birth *<input name="birthDate" type="date" required></label>
+        <label>Sex *<select name="sex" required><option value="">Select</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></label>
+        <label>Contact Number *<input name="contact" type="tel" autocomplete="tel" required placeholder="09XXXXXXXXX" pattern="[0-9+() -]{7,20}"></label>
+        <label>Email Address<input name="email" type="email" autocomplete="email" placeholder="name@email.com"></label>
+        <label class="wide">Complete Address *<textarea name="address" rows="2" autocomplete="street-address" required placeholder="House No., Street, Barangay, City/Municipality, Province"></textarea></label>
+      </div>
+
+      <div class="card-title sub">
+        <div><span class="step">02</span><h2>Assessment Details</h2></div>
+      </div>
+      <div class="form-grid">
+        <label>Qualification
+          <input value="EVENT MANAGEMENT SERVICES NC III" readonly>
+        </label>
+        <label>Preferred Assessment Date<input name="preferredDate" type="date"></label>
+        <label class="wide">Relevant Training / Work Experience (if any)<textarea name="experience" rows="3" placeholder="You may briefly indicate related training or work experience."></textarea></label>
+      </div>
+
+      <div class="privacy">
+        <label class="consent"><input type="checkbox" name="consent" required><span>I confirm that the information I provided is true and correct, and I consent to its use by ACTS Colleges for assessment registration and related coordination.</span></label>
+        <small>Please submit only accurate information. The assessment center may contact you regarding your registration.</small>
+      </div>
+      <div class="form-actions">
+        <button type="reset" class="btn light">Clear Form</button>
+        <button type="submit" class="btn primary">Submit Registration <span aria-hidden="true">→</span></button>
+      </div>
+      <p id="form-message" class="message" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section id="records" class="view">
+    <div class="card">
+      <div class="records-head">
+        <div><span class="step">03</span><h2>Registered Applicants</h2><p class="muted">Registration records saved on this device/browser.</p></div>
+        <div class="record-actions"><button id="export" class="btn light" type="button">Export CSV</button><button id="print" class="btn primary" type="button">Print List</button></div>
+      </div>
+      <div class="search-row"><input id="search" type="search" placeholder="Search applicant name or contact..." aria-label="Search registration records"><span id="count" class="count">0 applicants</span></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Registration No.</th><th>Applicant Name</th><th>Contact</th><th>Email</th><th>Preferred Date</th><th>Date Registered</th><th class="no-print">Action</th></tr></thead><tbody id="records-body"></tbody></table>
+      </div>
+      <div id="empty" class="empty">No registration records yet.</div>
+    </div>
+  </section>
+
+  <footer><strong>ACTS COLLEGES</strong><span>Electronic Registration • Event Management Services NC III</span></footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
